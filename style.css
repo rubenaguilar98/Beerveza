@@ -1,0 +1,25 @@
+a#redir{
+    color: white;
+    font-size : 15px;
+
+}
+
+body.body{
+    background-color: yellow;
+}
+
+table.table{
+    border-collapse: collapse;
+    border: black 3px solid;
+    margin-top: 20px;
+    
+}
+
+table tr.tr{
+    border: black 2px solid;
+}
+
+h1{
+    text-align: center;
+}
+

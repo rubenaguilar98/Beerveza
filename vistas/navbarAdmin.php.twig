@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>BeerVeza</title>
+	<meta charset="utf8" />
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
+
+</head>
+<body id="body">
+
+	<div class="container-flex">		
+		<div class="navbar navbar-expand-lg bg-dark">
+			<a class="navbar-brand text-warning" href="#">BeerVeza</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="index.php?con=marca&ope=listarAdmin">Marcas</a>
+                        
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="index.php?con=cerveza&ope=listarAdmin">Cervezas</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="index.php?con=usuario&ope=listar">Usuarios</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link text-warning" href="Logout.php">Salir</a>
+					</li>
+
+				</ul> 
+
+			</div>	
+						<div class="navbar-text text-warning">
+				Bienvenido/a, {{ user }}
+			</div>
+
+		</div>	

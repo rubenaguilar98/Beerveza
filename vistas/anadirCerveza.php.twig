@@ -1,0 +1,77 @@
+{% extends "plantillaNavbarAdmin.php.twig" %}
+
+    {% block body %}
+    
+    {% block head %}
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block titulo %} <h1>Cervezas</h1> {% endblock %}
+
+    {% block contenido %}
+
+        <form class="form" action="index.php">
+
+            <input type="hidden" name="ope" value="guardar"/>
+            <input type="hidden" name="con" value="cerveza"/>
+			
+			<div class="row form-group">
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="nombre">Nombre:</label>
+					<input class="form-control" type="nombre" name="nombre" 
+						id="nombre" required />
+				</div>
+
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="graduacion">Graduacion:</label>
+					<input class="form-control" type="double" id="graduacion" name="graduacion" required />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="composicion">Composicion:</label>
+					<input class="form-control" type="text" id="composicion "name="composicion" required />
+				</div>
+
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="capacidad">Capacidad:</label>
+					<input class="form-control" type="int" id="capacidad" name="capacidad" 
+						   required />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="marca">Marca:</label>
+					<select class="form-control" type="text" id="marca" name="marca" required>
+
+                        {% for item in marc %}
+                            <option>{{item.NomMarca}}</option>
+                        {% endfor %}
+
+                    </select>
+				</div>
+
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="imagen">Imagen:</label>
+					<input class="form-control" type="text" id="imagen" name="imagen" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<div class="col-md-4 mx-auto">
+					<button class="btn btn-dark w-100" type="submit">Añadir</button>
+				</div>
+			</div>
+
+            </form>
+   
+
+    {% endblock %}
+    
+    {% endblock %}
+            

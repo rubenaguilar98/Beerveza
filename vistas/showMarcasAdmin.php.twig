@@ -1,0 +1,83 @@
+{% extends "plantillaNavbarAdmin.php.twig" %}
+
+    {% block head %}
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <script>
+        function myFunction() {
+        var x = document.getElementById("signinHide");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+        }
+    </script>
+
+    {% endblock %}
+
+    {% block titulo %} <h1>Marcas</h1> {% endblock %}
+
+    {% block contenido %}
+
+
+    <a  class="p-2 mb-2 bg-success text-white" onclick="myFunction()">Añadir marca</a><br/>
+
+        <table class="table">
+            <thead class="thead-dark"> 
+                <th>CodMarca</th>
+                <th>NomMarca</th>
+                <th>Pais</th>
+                <th>Imagen</th>
+                <th></th>
+            </thead>
+            
+            <tbody class="tbody">
+                {% for item in dat  %}
+                <tr class="tr">
+                    <td>{{item.CodMarca}}</td>
+                    <td>{{item.NomMarca}}</td>
+                    <td>{{item.Pais}}</td>
+                    <td><img src="{{item.imgMarca}}" height="150" width="150"></img></td>
+                    <td> <a href="index.php?con=marca&ope=borrar&id={{item.CodMarca}}">Borrar</a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <form id="signinHide" style="display:none">
+
+            <input type="hidden" name="ope" value="anadir"/>
+            <input type="hidden" name="con" value="marca"/>
+			
+			<div class="row form-group">
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="marca">Marca:</label>
+					<input class="form-control" type="text" name="marca" 
+						id="marca"  required />
+				</div>
+
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="pais">Pais:</label>
+					<input class="form-control" type="text" id="pais" name="pais" required />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<div class="col-md-6 mx-auto">
+					<label class="col-form-label" for="imagen">Imagen:</label>
+					<input class="form-control" type="text" id="apellidos "name="imagen"  />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<div class="col-md-4 mx-auto">
+					<button class="btn btn-dark w-100" type="submit">Registrar</button>
+				</div>
+			</div>
+		</form>
+
+    {% endblock %}

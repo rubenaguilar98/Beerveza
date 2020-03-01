@@ -1,0 +1,48 @@
+{% extends "plantillaNavbar.php.twig" %}
+
+    {% block body %}
+    
+    {% block head %}
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="./fontawesome/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {% endblock %}
+
+    {% block titulo %} <h1>Cervezas</h1> {% endblock %}
+
+    {% block contenido %}
+
+    
+
+        <table class="table">
+            <thead class="thead-dark"> 
+                <th>CodTipo</th>
+                <th>NomTipo</th>
+                <th>Graduacion</th>
+                <th>Composicion</th>
+                <th>Capacidad</th>
+                <th>CodMarca</th>
+                <th>imgTipo</th>
+            </thead>
+            
+            <tbody class="tbody">
+                {% for item in dat  %}
+                <tr class="tr">
+                    <td>{{item.CodTipo}}</td>
+                    <td>{{item.NomTipo}}</td>
+                    <td>{{item.Graduacion}}</td>
+                    <td>{{item.Composicion}}</td>
+                    <td>{{item.Capacidad}}</td>
+                    <td>{{item.CodMarca}}</td>
+                    <td><img src="{{item.imgTipo}}" height="150" width="150"></img></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+   
+
+    {% endblock %}
+    
+    {% endblock %}
