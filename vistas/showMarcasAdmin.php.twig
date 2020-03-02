@@ -26,32 +26,10 @@
 
     <a  class="p-2 mb-2 bg-success text-white" onclick="myFunction()">Añadir marca</a><br/>
 
-        <table class="table">
-            <thead class="thead-dark"> 
-                <th>CodMarca</th>
-                <th>NomMarca</th>
-                <th>Pais</th>
-                <th>Imagen</th>
-                <th></th>
-            </thead>
-            
-            <tbody class="tbody">
-                {% for item in dat  %}
-                <tr class="tr">
-                    <td>{{item.CodMarca}}</td>
-                    <td>{{item.NomMarca}}</td>
-                    <td>{{item.Pais}}</td>
-                    <td><img src="{{item.imgMarca}}" height="150" width="150"></img></td>
-                    <td> <a href="index.php?con=marca&ope=borrar&id={{item.CodMarca}}">Borrar</a> </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-
-        <form id="signinHide" style="display:none">
+        <form id="signinHide" style="display:none" method="post">
 
             <input type="hidden" name="ope" value="anadir"/>
-            <input type="hidden" name="con" value="marca"/>
+            <input type="hidden" name="con" value="Marca"/>
 			
 			<div class="row form-group">
 				<div class="col-md-6 mx-auto">
@@ -75,9 +53,33 @@
 
 			<div class="row form-group">
 				<div class="col-md-4 mx-auto">
-					<button class="btn btn-dark w-100" type="submit">Registrar</button>
+					<button class="btn btn-dark w-100" type="submit">Añadir</button>
 				</div>
 			</div>
 		</form>
+
+        <table class="table">
+            <thead class="thead-dark"> 
+                <th>CodMarca</th>
+                <th>NomMarca</th>
+                <th>Pais</th>
+                <th>Imagen</th>
+                <th></th>
+            </thead>
+            
+            <tbody class="tbody">
+                {% for item in dat  %}
+                <tr class="tr">
+                    <td>{{item.CodMarca}}</td>
+                    <td>{{item.NomMarca}}</td>
+                    <td>{{item.Pais}}</td>
+                    <td><img src="{{item.imgMarca}}" height="150" width="150"></img></td>
+                    <td> <a href="index.php?con=Marca&ope=borrar&id={{item.CodMarca}}">Borrar</a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
 
     {% endblock %}

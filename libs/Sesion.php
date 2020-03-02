@@ -1,7 +1,7 @@
 <?php
 
 	require_once "Database.php";
-	require_once "modelos/Usuario.php";
+	require_once "C:/xampp/htdocs/beerveza/modelos/Usuario.php";
 
 	class Sesion{
         

@@ -26,12 +26,12 @@
 
         public function nuevo(){
 
-                $email = $_GET["email"] ;
-                $nombre = $_GET["nombre"] ;
-                $apellidos = $_GET["apellidos"] ;
-                $pass = $_GET["pass"] ;
-                $conf = $_GET["conf"] ;
-                $fec = $_GET["fec"] ;
+                $email = $_POST["email"] ;
+                $nombre = $_POST["nombre"] ;
+                $apellidos = $_POST["apellidos"] ;
+                $pass = $_POST["pass"] ;
+                $conf = $_POST["conf"] ;
+                $fec = $_POST["fec"] ;
 
         
                 if ($pass==$conf):
@@ -64,7 +64,7 @@
             $usu->eliminar();
 
             
-            header("location:index.php?con=usuario&ope=listar");
+            header("location:index.php?con=Usuario&ope=listar");
         }
     }
         

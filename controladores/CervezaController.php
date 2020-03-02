@@ -51,11 +51,11 @@
         public function guardar(){
             
 
-            $nombre = $_GET['nombre'];
-            $graduacion = $_GET['graduacion'];
-            $composicion = $_GET['composicion'];
-            $capacidad = $_GET['capacidad'];
-            $imagen = $_GET['imagen'];
+            $nombre = $_POST['nombre'];
+            $graduacion = $_POST['graduacion'];
+            $composicion = $_POST['composicion'];
+            $capacidad = $_POST['capacidad'];
+            $imagen = $_POST['imagen'];
 
             $cer = new Cerveza();
 
@@ -65,7 +65,7 @@
             $cer->setCapacidad($capacidad);
             $cer->setimgTipo($imagen);
 
-            $marca = $_GET['marca'];
+            $marca = $_POST['marca'];
             
             $marcId = Marca::obtenerId($marca);
 
@@ -73,7 +73,7 @@
 
             $cer->save();
 
-            header("location:index.php?con=cerveza&ope=listarAdmin");
+            header("location:index.php?con=Cerveza&ope=listarAdmin");
         }
 
         public function borrar(){

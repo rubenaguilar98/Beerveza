@@ -1,5 +1,5 @@
 <?php
-require_once "libs/Sesion.php";
+require_once "C:/xampp/htdocs/beerveza/libs/Sesion.php";
 	class Usuario
 	{
 		private $idUsu ;

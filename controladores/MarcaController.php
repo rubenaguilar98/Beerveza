@@ -43,9 +43,9 @@
         public function anadir(){
             
 
-            $marca = $_GET['marca'];
-            $pais = $_GET['pais'];
-            $imagen = $_GET['imagen'];
+            $marca = $_POST['marca'];
+            $pais = $_POST['pais'];
+            $imagen = $_POST['imagen'];
 
 
             $marc = new Marca();
@@ -56,7 +56,7 @@
 
             $marc->save();
 
-            header("location:index.php?con=marca&ope=listarAdmin");
+            header("location:index.php?con=Marca&ope=listarAdmin");
         }
 
         public function borrar(){
@@ -66,7 +66,7 @@
             $marc->eliminar();
 
           
-            header("location:index.php?con=marca&ope=listarAdmin");
+            header("location:index.php?con=Marca&ope=listarAdmin");
         }
     }
         

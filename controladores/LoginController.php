@@ -54,8 +54,8 @@ require_once "libs/Sesion.php";
 
                 $ses = Sesion::getInstance();
 
-                $email = $_GET['email'];
-                $pass = $_GET['pass'];
+                $email = $_POST['email'];
+                $pass = $_POST['pass'];
 
                 $correcto = $ses->login($email, $pass);
 
