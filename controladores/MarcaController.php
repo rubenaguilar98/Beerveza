@@ -43,9 +43,9 @@
         public function anadir(){
             
 
-            $marca = $_POST['marca'];
-            $pais = $_POST['pais'];
-            $imagen = $_POST['imagen'];
+            $marca = $_GET['marca'];
+            $pais = $_GET['pais'];
+            $imagen = $_GET['imagen'];
 
 
             $marc = new Marca();

@@ -18,7 +18,7 @@ skeleton document:
     <html>
         <head>
             {% block head %}
-                <link rel="stylesheet" href="style.css" />
+                <link rel="stylesheet" href="estilo.css" />
                 <title>{% block title %}{% endblock %} - My Webpage</title>
             {% endblock %}
         </head>

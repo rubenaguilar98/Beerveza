@@ -86,4 +86,5 @@ require_once "libs/Database.php";
 
             return $db->getObject("marca");
         }
+        
     }
